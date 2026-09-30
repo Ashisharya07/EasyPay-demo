@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EasyPay</title>
+
+  <meta name="theme-color" content="#080808">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="auth-page">
+
+    <div class="auth-glow glow-one"></div>
+    <div class="auth-glow glow-two"></div>
+
+    <section class="login-container">
+
+      <!-- EasyPay Logo -->
+      <div class="brand">
+
+        <div class="brand-icon">
+          EP
+        </div>
+
+        <div class="brand-name">
+          <span>Easy</span><strong>Pay</strong>
+        </div>
+
+        <p>Smart • Simple • Secure</p>
+
+      </div>
+
+
+      <!-- Login Card -->
+      <div class="login-card">
+
+        <div class="welcome">
+          <h1>Welcome Back</h1>
+          <p>Login to continue to your EasyPay account</p>
+        </div>
+
+
+        <!-- Mobile Number -->
+        <div class="input-group">
+
+          <label>Mobile Number</label>
+
+          <div class="input-box">
+
+            <span class="prefix">+91</span>
+
+            <input
+              type="tel"
+              id="mobile"
+              placeholder="Enter mobile number"
+              maxlength="10"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="input-group">
+
+          <div class="label-row">
+
+            <label>Password</label>
+
+            <button
+              type="button"
+              class="forgot-btn"
+              onclick="forgotPassword()"
+            >
+              Forgot Password?
+            </button>
+
+          </div>
+
+
+          <div class="input-box">
+
+            <span class="input-icon">●</span>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter password"
+            >
+
+            <button
+              type="button"
+              class="show-btn"
+              onclick="togglePassword()"
+            >
+              Show
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- Remember Me -->
+        <div class="remember-row">
+
+          <label class="remember">
+
+            <input type="checkbox" id="remember">
+
+            <span class="checkmark"></span>
+
+            Remember me
+
+          </label>
+
+        </div>
+
+
+        <!-- Login Button -->
+        <button
+          type="button"
+          class="login-btn"
+          onclick="loginDemo()"
+        >
+
+          <span>Login</span>
+
+          <span class="arrow">→</span>
+
+        </button>
+
+
+        <!-- Divider -->
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+
+        <!-- Telegram -->
+        <button
+          type="button"
+          class="telegram-btn"
+          onclick="telegramSupport()"
+        >
+
+          <span class="telegram-icon">➤</span>
+
+          <span>Telegram Support</span>
+
+        </button>
+
+
+        <!-- Register -->
+        <div class="register-text">
+
+          Don't have an account?
+
+          <button
+            type="button"
+            onclick="registerDemo()"
+          >
+            Create Account
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Security -->
+      <div class="security-note">
+
+        <span>🔒</span>
+
+        <span>
+          Your demo data stays securely on this device.
+        </span>
+
+      </div>
+
+
+      <div class="version">
+        EasyPay Demo • v1.0
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- OTP MODAL -->
+
+  <div class="modal" id="otpModal">
+
+    <div
+      class="modal-overlay"
+      onclick="closeOtp()"
+    ></div>
+
+
+    <div class="otp-card">
+
+      <button
+        class="close-btn"
+        onclick="closeOtp()"
+      >
+        ×
+      </button>
+
+
+      <div class="otp-icon">
+        🔐
+      </div>
+
+
+      <h2>Verify Mobile</h2>
+
+      <p>
+        Enter the 6-digit demo OTP sent to
+        <strong id="otpMobile"></strong>
+      </p>
+
+
+      <div class="otp-inputs">
+
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+        <input maxlength="1" inputmode="numeric">
+
+      </div>
+
+
+      <div class="demo-code">
+        Demo OTP:
+        <strong>123456</strong>
+      </div>
+
+
+      <button
+        class="verify-btn"
+        onclick="verifyOtp()"
+      >
+        Verify & Continue
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
