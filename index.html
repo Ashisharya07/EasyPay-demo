@@ -2,481 +2,419 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <meta
+    name="theme-color"
+    content="#070707"
+  >
 
   <title>EasyPay</title>
-
-  <meta name="theme-color" content="#070707">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- =========================
-       AUTH AREA
-       ========================= -->
+  <!-- =====================================================
+       LOGIN
+  ====================================================== -->
 
-  <main class="auth-page">
+  <div class="auth-screen" id="loginScreen">
 
-    <div class="auth-glow glow-one"></div>
-    <div class="auth-glow glow-two"></div>
-
-    <section class="login-container">
-
-
-      <!-- =====================
-           BRAND
-           ===================== -->
+    <div class="login-container">
 
       <div class="brand">
 
-        <div class="brand-icon">
+        <div class="logo-circle">
           EP
         </div>
 
-        <div class="brand-name">
-          <span>Easy</span><strong>Pay</strong>
-        </div>
+        <h1>Easy<span>Pay</span></h1>
 
-        <p>Smart • Simple • Secure</p>
+        <p>Simple. Fast. Secure.</p>
 
       </div>
 
 
-      <!-- =====================
-           LOGIN SCREEN
-           ===================== -->
+      <div class="login-card">
 
-      <div class="auth-screen active" id="loginScreen">
+        <h2>Welcome Back</h2>
 
-        <div class="login-card">
-
-          <div class="welcome">
-
-            <h1>Welcome Back</h1>
-
-            <p>
-              Login to continue to your EasyPay account
-            </p>
-
-          </div>
+        <p>Login to continue to your EasyPay account.</p>
 
 
-          <!-- Mobile -->
+        <div class="input-group">
 
-          <div class="input-group">
+          <label>Mobile Number</label>
 
-            <label>Mobile Number</label>
+          <div class="input-wrap">
 
-            <div class="input-box">
-
-              <span class="prefix">+91</span>
-
-              <input
-                type="tel"
-                id="loginMobile"
-                placeholder="Enter mobile number"
-                maxlength="10"
-                inputmode="numeric"
-              >
-
-            </div>
+            <input
+              type="tel"
+              id="loginMobile"
+              placeholder="Enter mobile number"
+              maxlength="10"
+              inputmode="numeric"
+            >
 
           </div>
 
-
-          <!-- Password -->
-
-          <div class="input-group">
-
-            <div class="label-row">
-
-              <label>Password</label>
-
-              <button
-                type="button"
-                class="forgot-btn"
-                onclick="forgotPassword()"
-              >
-                Forgot Password?
-              </button>
-
-            </div>
+        </div>
 
 
-            <div class="input-box">
+        <div class="input-group">
 
-              <span class="input-icon">●</span>
+          <label>Password</label>
 
-              <input
-                type="password"
-                id="loginPassword"
-                placeholder="Enter password"
-              >
+          <div class="input-wrap">
 
-              <button
-                type="button"
-                class="show-btn"
-                onclick="toggleLoginPassword()"
-              >
-                Show
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <!-- Remember -->
-
-          <div class="remember-row">
-
-            <label class="remember">
-
-              <input
-                type="checkbox"
-                id="rememberMe"
-              >
-
-              <span class="checkmark"></span>
-
-              Remember me
-
-            </label>
-
-          </div>
-
-
-          <!-- Login -->
-
-          <button
-            type="button"
-            class="login-btn"
-            onclick="loginDemo()"
-          >
-
-            <span>Login</span>
-
-            <span class="arrow">→</span>
-
-          </button>
-
-
-          <!-- Divider -->
-
-          <div class="divider">
-            <span>OR</span>
-          </div>
-
-
-          <!-- Telegram -->
-
-          <button
-            type="button"
-            class="telegram-btn"
-            onclick="telegramSupport()"
-          >
-
-            <span class="telegram-icon">➤</span>
-
-            <span>Telegram Support</span>
-
-          </button>
-
-
-          <!-- Register -->
-
-          <div class="register-text">
-
-            Don't have an account?
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter password"
+            >
 
             <button
               type="button"
-              onclick="showRegister()"
+              class="password-toggle"
+              onclick="toggleLoginPassword()"
             >
-              Create Account
+              👁
             </button>
 
           </div>
 
         </div>
 
+
+        <div class="remember-row">
+
+          <label>
+            <input
+              type="checkbox"
+              id="rememberMe"
+            >
+            Remember me
+          </label>
+
+          <a
+            href="javascript:void(0)"
+            onclick="forgotPassword()"
+          >
+            Forgot Password?
+          </a>
+
+        </div>
+
+
+        <button
+          class="login-btn"
+          onclick="loginDemo()"
+        >
+          Login
+        </button>
+
+
+        <button
+          class="telegram-btn"
+          onclick="telegramSupport()"
+        >
+          ✈ Telegram Support
+        </button>
+
+
+        <div class="auth-switch">
+
+          Don't have an account?
+
+          <button
+            onclick="showRegister()"
+          >
+            Create Account
+          </button>
+
+        </div>
+
+
+        <div class="security-text">
+          🔒 Your security is our priority
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       REGISTER
+  ====================================================== -->
+
+  <div
+    class="auth-screen"
+    id="registerScreen"
+    style="display:none;"
+  >
+
+    <div class="login-container">
+
+      <div class="brand">
+
+        <div class="logo-circle">
+          EP
+        </div>
+
+        <h1>Easy<span>Pay</span></h1>
+
+        <p>Create your account</p>
+
       </div>
 
 
-      <!-- =====================
-           REGISTER SCREEN
-           ===================== -->
+      <div class="login-card">
 
-      <div
-        class="auth-screen"
-        id="registerScreen"
-        style="display:none;"
-      >
+        <h2>Create Account</h2>
 
-        <div class="login-card">
-
-          <div class="welcome">
-
-            <h1>Create Account</h1>
-
-            <p>
-              Join EasyPay and create your demo account
-            </p>
-
-          </div>
+        <p>Join the EasyPay client demo.</p>
 
 
-          <!-- Mobile -->
+        <div class="input-group">
 
-          <div class="input-group">
+          <label>Mobile Number</label>
 
-            <label>Mobile Number</label>
+          <div class="input-wrap">
 
-            <div class="input-box">
-
-              <span class="prefix">+91</span>
-
-              <input
-                type="tel"
-                id="registerMobile"
-                placeholder="Enter mobile number"
-                maxlength="10"
-                inputmode="numeric"
-              >
-
-            </div>
+            <input
+              type="tel"
+              id="registerMobile"
+              placeholder="Enter mobile number"
+              maxlength="10"
+              inputmode="numeric"
+            >
 
           </div>
 
-
-          <!-- Password -->
-
-          <div class="input-group">
-
-            <label>Password</label>
-
-            <div class="input-box">
-
-              <span class="input-icon">●</span>
-
-              <input
-                type="password"
-                id="registerPassword"
-                placeholder="Create password"
-              >
-
-              <button
-                type="button"
-                class="show-btn"
-                onclick="toggleRegisterPassword()"
-              >
-                Show
-              </button>
-
-            </div>
-
-          </div>
+        </div>
 
 
-          <!-- Confirm Password -->
+        <div class="input-group">
 
-          <div class="input-group">
+          <label>Password</label>
 
-            <label>Confirm Password</label>
+          <div class="input-wrap">
 
-            <div class="input-box">
-
-              <span class="input-icon">●</span>
-
-              <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Confirm password"
-              >
-
-            </div>
-
-          </div>
-
-
-          <!-- Invite Code -->
-
-          <div class="input-group">
-
-            <label>
-              Invite Code
-              <span class="optional">(Optional)</span>
-            </label>
-
-            <div class="input-box">
-
-              <span class="input-icon">#</span>
-
-              <input
-                type="text"
-                id="inviteCode"
-                placeholder="Enter invite code"
-                maxlength="20"
-              >
-
-            </div>
-
-          </div>
-
-
-          <!-- Terms -->
-
-          <div class="terms-row">
-
-            <label class="remember">
-
-              <input
-                type="checkbox"
-                id="termsCheck"
-              >
-
-              <span class="checkmark"></span>
-
-              <span>
-                I agree to the
-                <button
-                  type="button"
-                  class="terms-btn"
-                  onclick="showTerms()"
-                >
-                  Terms & Conditions
-                </button>
-              </span>
-
-            </label>
-
-          </div>
-
-
-          <!-- Create Account -->
-
-          <button
-            type="button"
-            class="login-btn"
-            onclick="registerDemo()"
-          >
-
-            <span>Create Account</span>
-
-            <span class="arrow">→</span>
-
-          </button>
-
-
-          <!-- Back Login -->
-
-          <div class="register-text">
-
-            Already have an account?
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="Create password"
+            >
 
             <button
               type="button"
-              onclick="showLogin()"
+              class="password-toggle"
+              onclick="toggleRegisterPassword()"
             >
-              Login
+              👁
             </button>
 
           </div>
 
         </div>
 
+
+        <div class="input-group">
+
+          <label>Confirm Password</label>
+
+          <div class="input-wrap">
+
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm password"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label>Invite Code <span style="color:#777;">(Optional)</span></label>
+
+          <div class="input-wrap">
+
+            <input
+              type="text"
+              id="inviteCode"
+              placeholder="Enter invite code"
+              maxlength="20"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="terms-row">
+
+          <label>
+
+            <input
+              type="checkbox"
+              id="termsCheck"
+            >
+
+            I agree to the
+
+            <a
+              href="javascript:void(0)"
+              onclick="showTerms()"
+            >
+              Terms & Conditions
+            </a>
+
+            and Privacy Policy.
+
+          </label>
+
+        </div>
+
+
+        <button
+          class="create-btn"
+          onclick="registerDemo()"
+        >
+          Create Account
+        </button>
+
+
+        <button
+          class="telegram-btn"
+          onclick="telegramSupport()"
+        >
+          ✈ Telegram Support
+        </button>
+
+
+        <div class="auth-switch">
+
+          Already have an account?
+
+          <button
+            onclick="showLogin()"
+          >
+            Login
+          </button>
+
+        </div>
+
+
+        <div class="security-text">
+          🔒 Demo environment · No real financial activity
+        </div>
+
       </div>
 
+    </div>
 
-      <!-- =====================
-           SECURITY
-           ===================== -->
-
-      <div class="security-note">
-
-        <span>🔒</span>
-
-        <span>
-          Demo mode • No real payment or OTP is processed
-        </span>
-
-      </div>
+  </div>
 
 
-      <div class="version">
-        EasyPay Demo • v1.0
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
+  <!-- =====================================================
        OTP MODAL
-       ========================= -->
+  ====================================================== -->
 
   <div
     class="modal"
     id="otpModal"
   >
 
-    <div
-      class="modal-overlay"
-      onclick="closeOtp()"
-    ></div>
-
-
-    <div class="otp-card">
+    <div class="modal-content">
 
       <button
-        class="close-btn"
+        class="modal-close"
         onclick="closeOtp()"
       >
         ×
       </button>
 
-
-      <div class="otp-icon">
-        🔐
-      </div>
-
-
-      <h2>Verify Mobile</h2>
+      <h2>Verify OTP</h2>
 
       <p>
-        Enter the 6-digit demo OTP sent to
-        <strong id="otpMobile"></strong>
+        Enter the 6-digit verification code.
       </p>
 
 
-      <div class="otp-inputs">
+      <div class="otp-box">
 
-        <input maxlength="1" inputmode="numeric">
-        <input maxlength="1" inputmode="numeric">
-        <input maxlength="1" inputmode="numeric">
-        <input maxlength="1" inputmode="numeric">
-        <input maxlength="1" inputmode="numeric">
-        <input maxlength="1" inputmode="numeric">
+        <input
+          class="otp-input"
+          type="tel"
+          maxlength="1"
+          inputmode="numeric"
+        >
+
+        <input
+          class="otp-input"
+          type="tel"
+          maxlength="1"
+          inputmode="numeric"
+        >
+
+        <input
+          class="otp-input"
+          type="tel"
+          maxlength="1"
+          inputmode="numeric"
+        >
+
+        <input
+          class="otp-input"
+          type="tel"
+          maxlength="1"
+          inputmode="numeric"
+        >
+
+        <input
+          class="otp-input"
+          type="tel"
+          maxlength="1"
+          inputmode="numeric"
+        >
+
+        <input
+          class="otp-input"
+          type="tel"
+          maxlength="1"
+          inputmode="numeric"
+        >
 
       </div>
 
 
-      <div class="demo-code">
+      <div class="demo-notice">
 
         Demo OTP:
-        <strong>123456</strong>
+        <strong style="color:#f5c542;">
+          123456
+        </strong>
 
       </div>
 
 
       <button
-        class="verify-btn"
+        class="primary-trade-btn"
         onclick="verifyOtp()"
       >
-        Verify & Continue
+        Verify OTP
       </button>
 
     </div>
@@ -484,49 +422,43 @@
   </div>
 
 
-  <!-- =========================
+  <!-- =====================================================
        TERMS MODAL
-       ========================= -->
+  ====================================================== -->
 
   <div
     class="modal"
     id="termsModal"
   >
 
-    <div
-      class="modal-overlay"
-      onclick="closeTerms()"
-    ></div>
-
-
-    <div class="otp-card terms-card">
+    <div class="modal-content">
 
       <button
-        class="close-btn"
+        class="modal-close"
         onclick="closeTerms()"
       >
         ×
       </button>
 
-
-      <div class="otp-icon">
-        📄
-      </div>
-
-
       <h2>Terms & Conditions</h2>
 
-      <p class="terms-content">
-
-        This is a client demonstration of EasyPay.
-        No real payment, cryptocurrency transfer,
-        banking transaction or SMS OTP is processed.
-
+      <p>
+        This EasyPay interface is a client demonstration only.
+        It does not process real payments, cryptocurrency,
+        withdrawals, deposits, or financial transactions.
       </p>
 
+      <br>
+
+      <p>
+        Any balance, transaction, reward, price, or account
+        information shown in this demo is sample data.
+      </p>
+
+      <br>
 
       <button
-        class="verify-btn"
+        class="primary-trade-btn"
         onclick="closeTerms()"
       >
         Close
@@ -537,7 +469,9 @@
   </div>
 
 
-  <!-- JavaScript -->
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
   <script src="script.js"></script>
 
