@@ -1,6 +1,6 @@
-/* ==============================
-   EasyPay Premium Login
-   ============================== */
+/* =========================================
+   EasyPay - Premium Auth UI
+   ========================================= */
 
 * {
   margin: 0;
@@ -11,12 +11,11 @@
 :root {
   --bg: #070707;
   --card: #111111;
-  --card-2: #161616;
   --gold: #f6c945;
   --gold-light: #ffe58a;
   --text: #ffffff;
   --muted: #929292;
-  --border: rgba(246, 201, 69, 0.18);
+  --border: #292929;
 }
 
 html,
@@ -33,76 +32,87 @@ body {
 }
 
 
-/* ==============================
-   Main Background
-   ============================== */
+/* =========================================
+   AUTH BACKGROUND
+   ========================================= */
 
 .auth-page {
   min-height: 100vh;
   min-height: 100dvh;
+
   position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 18px;
+
+  padding: 30px 16px;
+
   overflow: hidden;
 
   background:
     radial-gradient(
       circle at 50% -10%,
-      rgba(246, 201, 69, 0.13),
-      transparent 38%
+      rgba(246, 201, 69, 0.15),
+      transparent 40%
     ),
     #070707;
 }
 
 
-/* ==============================
-   Background Glow
-   ============================== */
+/* Background Glow */
 
 .auth-glow {
   position: absolute;
-  width: 260px;
-  height: 260px;
+
+  width: 280px;
+  height: 280px;
+
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.12;
+
+  filter: blur(100px);
+
+  opacity: 0.13;
+
   pointer-events: none;
 }
 
 .glow-one {
   background: #f6c945;
-  top: 5%;
+
+  top: -150px;
   left: -150px;
 }
 
 .glow-two {
-  background: #8d5cff;
-  bottom: -150px;
-  right: -100px;
+  background: #684cff;
+
+  right: -160px;
+  bottom: -160px;
 }
 
 
-/* ==============================
-   Container
-   ============================== */
+/* =========================================
+   CONTAINER
+   ========================================= */
 
 .login-container {
   width: 100%;
   max-width: 430px;
+
   position: relative;
   z-index: 2;
 }
 
 
-/* ==============================
-   Brand
-   ============================== */
+/* =========================================
+   BRAND
+   ========================================= */
 
 .brand {
   text-align: center;
-  margin-bottom: 25px;
+
+  margin-bottom: 24px;
 }
 
 .brand-icon {
@@ -115,29 +125,33 @@ body {
   align-items: center;
   justify-content: center;
 
-  border: 2px solid var(--gold);
   border-radius: 20px;
 
-  color: var(--gold);
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: 1px;
+  border: 2px solid var(--gold);
 
   background:
     linear-gradient(
       145deg,
-      #191919,
-      #090909
+      #1a1a1a,
+      #080808
     );
+
+  color: var(--gold);
+
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1px;
 
   box-shadow:
     0 0 0 5px rgba(246, 201, 69, 0.04),
-    0 0 28px rgba(246, 201, 69, 0.18);
+    0 0 30px rgba(246, 201, 69, 0.22);
 }
 
 .brand-name {
   font-size: 31px;
+
   font-weight: 800;
+
   letter-spacing: -1px;
 }
 
@@ -151,22 +165,46 @@ body {
 
 .brand p {
   margin-top: 6px;
+
   color: #777;
+
   font-size: 12px;
+
   letter-spacing: 1.5px;
 }
 
 
-/* ==============================
-   Login Card
-   ============================== */
+/* =========================================
+   SCREEN ANIMATION
+   ========================================= */
+
+.auth-screen {
+  animation: screenIn 0.3s ease;
+}
+
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   LOGIN CARD
+   ========================================= */
 
 .login-card {
   background:
     linear-gradient(
       145deg,
       rgba(255,255,255,0.055),
-      rgba(255,255,255,0.018)
+      rgba(255,255,255,0.015)
     );
 
   border: 1px solid rgba(255,255,255,0.08);
@@ -176,16 +214,16 @@ body {
   padding: 25px 21px;
 
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.55),
+    0 25px 70px rgba(0,0,0,0.58),
     inset 0 1px 0 rgba(255,255,255,0.04);
 
   backdrop-filter: blur(18px);
 }
 
 
-/* ==============================
-   Welcome
-   ============================== */
+/* =========================================
+   WELCOME
+   ========================================= */
 
 .welcome {
   margin-bottom: 25px;
@@ -193,86 +231,120 @@ body {
 
 .welcome h1 {
   font-size: 25px;
+
   line-height: 1.2;
+
   margin-bottom: 7px;
 }
 
 .welcome p {
   color: var(--muted);
+
   font-size: 13px;
+
   line-height: 1.5;
 }
 
 
-/* ==============================
-   Inputs
-   ============================== */
+/* =========================================
+   INPUT GROUP
+   ========================================= */
 
 .input-group {
-  margin-bottom: 19px;
+  margin-bottom: 18px;
 }
 
 .input-group label {
   display: block;
+
   margin-bottom: 8px;
 
-  font-size: 13px;
-  font-weight: 600;
   color: #d4d4d4;
+
+  font-size: 13px;
+
+  font-weight: 600;
 }
+
+.optional {
+  color: #666;
+
+  font-size: 10px;
+
+  font-weight: normal;
+}
+
+
+/* Label Row */
 
 .label-row {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
+
+  justify-content: space-between;
 }
 
 .forgot-btn {
-  border: 0;
-  background: none;
+  border: none;
+
+  background: transparent;
 
   color: var(--gold);
+
   font-size: 11px;
+
   cursor: pointer;
 }
+
+
+/* =========================================
+   INPUT BOX
+   ========================================= */
 
 .input-box {
   height: 53px;
 
   display: flex;
+
   align-items: center;
 
   border-radius: 14px;
 
-  border: 1px solid #292929;
+  border: 1px solid var(--border);
 
-  background: rgba(8,8,8,0.75);
+  background: rgba(8,8,8,0.78);
 
   transition: 0.25s ease;
 }
 
 .input-box:focus-within {
-  border-color: rgba(246, 201, 69, 0.7);
+  border-color: rgba(246,201,69,0.75);
 
   box-shadow:
-    0 0 0 3px rgba(246, 201, 69, 0.07),
-    0 0 20px rgba(246, 201, 69, 0.06);
+    0 0 0 3px rgba(246,201,69,0.07),
+    0 0 20px rgba(246,201,69,0.06);
 }
 
 .prefix {
   padding-left: 15px;
-  padding-right: 10px;
+
+  padding-right: 11px;
 
   color: var(--gold);
+
   font-size: 14px;
+
   font-weight: 700;
 
-  border-right: 1px solid #292929;
+  border-right: 1px solid var(--border);
 }
 
 .input-icon {
   margin-left: 15px;
+
   color: var(--gold);
+
   font-size: 8px;
 }
 
@@ -286,6 +358,7 @@ body {
   padding: 0 13px;
 
   background: transparent;
+
   color: white;
 
   font-size: 14px;
@@ -295,23 +368,29 @@ body {
   color: #555;
 }
 
+
+/* Show Button */
+
 .show-btn {
   border: none;
+
   background: transparent;
 
   padding: 10px 14px;
 
   color: var(--gold);
+
   font-size: 11px;
+
   font-weight: 700;
 
   cursor: pointer;
 }
 
 
-/* ==============================
-   Remember
-   ============================== */
+/* =========================================
+   REMEMBER CHECKBOX
+   ========================================= */
 
 .remember-row {
   margin: 2px 0 21px;
@@ -319,10 +398,13 @@ body {
 
 .remember {
   display: flex;
+
   align-items: center;
+
   gap: 9px;
 
   color: #999;
+
   font-size: 12px;
 
   cursor: pointer;
@@ -336,15 +418,20 @@ body {
   width: 17px;
   height: 17px;
 
+  flex-shrink: 0;
+
   border-radius: 5px;
+
   border: 1px solid #414141;
 
   display: inline-block;
+
   position: relative;
 }
 
 .remember input:checked + .checkmark {
   background: var(--gold);
+
   border-color: var(--gold);
 }
 
@@ -352,24 +439,49 @@ body {
   content: "✓";
 
   position: absolute;
+
   left: 3px;
   top: -1px;
 
   color: #080808;
+
   font-size: 12px;
+
   font-weight: 900;
 }
 
 
-/* ==============================
-   Login Button
-   ============================== */
+/* =========================================
+   TERMS
+   ========================================= */
+
+.terms-row {
+  margin: 2px 0 21px;
+}
+
+.terms-btn {
+  border: none;
+
+  background: transparent;
+
+  color: var(--gold);
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   LOGIN / CREATE BUTTON
+   ========================================= */
 
 .login-btn {
   width: 100%;
   height: 54px;
 
   border: none;
+
   border-radius: 14px;
 
   background:
@@ -383,17 +495,21 @@ body {
   color: #090909;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 12px;
 
   font-size: 15px;
+
   font-weight: 900;
 
   cursor: pointer;
 
   box-shadow:
-    0 10px 28px rgba(246, 201, 69, 0.16);
+    0 10px 28px rgba(246,201,69,0.17);
 
   transition: 0.22s ease;
 }
@@ -402,7 +518,7 @@ body {
   transform: translateY(-2px);
 
   box-shadow:
-    0 14px 32px rgba(246, 201, 69, 0.25);
+    0 14px 34px rgba(246,201,69,0.25);
 }
 
 .login-btn:active {
@@ -414,33 +530,39 @@ body {
 }
 
 
-/* ==============================
-   Divider
-   ============================== */
+/* =========================================
+   DIVIDER
+   ========================================= */
 
 .divider {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   margin: 21px 0;
 
   color: #555;
+
   font-size: 10px;
 }
 
 .divider::before,
 .divider::after {
   content: "";
+
   flex: 1;
+
   height: 1px;
+
   background: #242424;
 }
 
 
-/* ==============================
-   Telegram
-   ============================== */
+/* =========================================
+   TELEGRAM
+   ========================================= */
 
 .telegram-btn {
   width: 100%;
@@ -455,11 +577,15 @@ body {
   color: #eeeeee;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 9px;
 
   font-size: 13px;
+
   font-weight: 600;
 
   cursor: pointer;
@@ -468,7 +594,8 @@ body {
 }
 
 .telegram-btn:hover {
-  border-color: rgba(246, 201, 69, 0.3);
+  border-color: rgba(246,201,69,0.3);
+
   background: #191919;
 }
 
@@ -477,6 +604,7 @@ body {
   height: 22px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -490,9 +618,9 @@ body {
 }
 
 
-/* ==============================
-   Register
-   ============================== */
+/* =========================================
+   REGISTER LINK
+   ========================================= */
 
 .register-text {
   text-align: center;
@@ -500,30 +628,36 @@ body {
   margin-top: 21px;
 
   color: #777;
+
   font-size: 12px;
 }
 
 .register-text button {
   border: none;
-  background: none;
+
+  background: transparent;
 
   color: var(--gold);
 
   font-size: 12px;
+
   font-weight: 700;
 
   cursor: pointer;
 }
 
 
-/* ==============================
-   Security
-   ============================== */
+/* =========================================
+   SECURITY
+   ========================================= */
 
 .security-note {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 7px;
 
   margin-top: 18px;
@@ -531,6 +665,7 @@ body {
   color: #656565;
 
   font-size: 10px;
+
   text-align: center;
 }
 
@@ -545,16 +680,19 @@ body {
 }
 
 
-/* ==============================
-   OTP Modal
-   ============================== */
+/* =========================================
+   MODAL
+   ========================================= */
 
 .modal {
   position: fixed;
+
   inset: 0;
 
   display: none;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 20px;
@@ -568,18 +706,25 @@ body {
 
 .modal-overlay {
   position: absolute;
+
   inset: 0;
 
-  background: rgba(0,0,0,0.78);
+  background: rgba(0,0,0,0.8);
 
   backdrop-filter: blur(8px);
 }
+
+
+/* =========================================
+   OTP CARD
+   ========================================= */
 
 .otp-card {
   width: 100%;
   max-width: 390px;
 
   position: relative;
+
   z-index: 2;
 
   padding: 27px 21px;
@@ -595,7 +740,26 @@ body {
   box-shadow:
     0 25px 80px rgba(0,0,0,0.7),
     0 0 35px rgba(246,201,69,0.08);
+
+  animation: modalIn 0.25s ease;
 }
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+
+    transform: scale(0.94) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* Close */
 
 .close-btn {
   position: absolute;
@@ -619,6 +783,9 @@ body {
   cursor: pointer;
 }
 
+
+/* OTP Icon */
+
 .otp-icon {
   width: 58px;
   height: 58px;
@@ -626,7 +793,9 @@ body {
   margin: 0 auto 15px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 18px;
@@ -640,12 +809,15 @@ body {
 
 .otp-card h2 {
   font-size: 21px;
+
   margin-bottom: 8px;
 }
 
 .otp-card p {
   color: #858585;
+
   font-size: 12px;
+
   line-height: 1.5;
 }
 
@@ -653,9 +825,16 @@ body {
   color: #ddd;
 }
 
+
+/* =========================================
+   OTP INPUTS
+   ========================================= */
+
 .otp-inputs {
   display: flex;
+
   justify-content: center;
+
   gap: 7px;
 
   margin: 22px 0 15px;
@@ -676,6 +855,7 @@ body {
   color: white;
 
   font-size: 18px;
+
   font-weight: 700;
 
   outline: none;
@@ -687,6 +867,9 @@ body {
   box-shadow:
     0 0 0 3px rgba(246,201,69,0.07);
 }
+
+
+/* Demo Code */
 
 .demo-code {
   margin-bottom: 18px;
@@ -700,11 +883,15 @@ body {
   color: var(--gold);
 }
 
+
+/* Verify */
+
 .verify-btn {
   width: 100%;
   height: 50px;
 
   border: none;
+
   border-radius: 13px;
 
   background: var(--gold);
@@ -717,9 +904,30 @@ body {
 }
 
 
-/* ==============================
-   Mobile
-   ============================== */
+/* =========================================
+   TERMS MODAL
+   ========================================= */
+
+.terms-card {
+  max-height: 80vh;
+
+  overflow-y: auto;
+}
+
+.terms-content {
+  padding: 15px 5px 20px;
+
+  color: #999 !important;
+
+  text-align: left;
+
+  line-height: 1.7 !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 380px) {
 
@@ -747,5 +955,4 @@ body {
   .otp-inputs input {
     width: 39px;
   }
-
-  }
+}
