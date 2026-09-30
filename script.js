@@ -14,7 +14,7 @@ let currentPage = "home";
 ========================================================= */
 
 function getAppContainer() {
-  return document.querySelector(".login-container") || document.body;
+  return document.body;
 }
 
 function hideAuthScreens() {
